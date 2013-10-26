@@ -1,4 +1,23 @@
-
+;-----------------------------------------------
+;画面をセンター表示にするiscript
+[iscript]
+var uAgent = navigator.userAgent.toLowerCase();
+if (uAgent.indexOf("phone") == -1 && uAgent.indexOf("ipad") == -1 && uAgent.indexOf("android") == -1) {
+    var tDisplay = {
+        center: function() {
+            $("#tyrano_base").css({
+                "top": ($(window).height() - $("#tyrano_base").height()) / 2,
+                "left":  ($(window).width() - $("#tyrano_base").width()) / 2
+            });
+        }
+    };
+    tDisplay.center();
+    $(window).resize(function(){
+        tDisplay.center();
+    });
+}
+[endscript]
+;-----------------------------------------------
 
 @image storage ="room.jpg" page=fore layer=base
 @wait time = 200
