@@ -670,7 +670,8 @@ tyrano.plugin.kag.tag.text={
                     
                     //再生途中にクリックされて、残りを一瞬で表示する
                     if(that.kag.stat.is_click_text == true || that.kag.stat.is_skip == true || that.kag.stat.is_nowait == true){
-                        setTimeout(function(){pchar(pchar)},0);
+                        //スキップ速度を変更する例 (0→100に変更)
+                        setTimeout(function(){pchar(pchar)},100);
                     }else{
                         setTimeout(function(){pchar(pchar)},that.kag.stat.ch_speed);
                     }
